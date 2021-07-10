@@ -11,15 +11,22 @@ const CategoryAdd = ({ setCategories }) => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if (category.trim().length > 1) {
-      setCategories((categories) => [...categories, category]);
-      setCategory('');  
+      setCategories((categories) => [category, ...categories]);
+      setCategory('');
     }
   };
-  
+
+  const handleOnDelete = () => {
+    setCategories(['']);
+  };
+
   return (
-    <form onSubmit={handleOnSubmit}>
-      <input type='text' value={category} onChange={handleOnChangeInput} />
-    </form>
+    <>
+      <form onSubmit={handleOnSubmit}>
+        <input type='text' value={category} onChange={handleOnChangeInput} />
+      </form>
+      <input type='submit' value='Limpiar Busqueda' onClick={handleOnDelete} />
+    </>
   );
 };
 

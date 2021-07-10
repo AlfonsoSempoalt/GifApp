@@ -1,40 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import GifGridItem from './GifGridItem';
+import { getGifs } from '../helpers/getGifs';
 
 const GifGrid = ({ category }) => {
   const [gifs, setGifs] = useState([]);
 
   useEffect(() => {
-    getGifs();
-  },[]);
-
-  const getGifs = async () => {
-    const url =
-      'https://api.giphy.com/v1/gifs/search?q=OnePiece&limit=15&api_key=XldqhgQr2Dgg65t15bK7dGk8ztMOxsTL';
-    const response = await fetch(url);
-    const { data } = await response.json();
-
-    const gifs = data.map((image) => {
-      return {
-        id: image.id,
-        title: image.title,
-        url: image.images?.downsized_medium.url,
-      };
-    });
-    setGifs(gifs);
-    console.log(gifs);
-  };
+    getGifs( category )
+          .then(setGifs);
+  }, [category]);
 
   return (
     <>
-      <h3>{ category }</h3>
-      <ol> 
-       { 
-          gifs.map(( gif ) => {
-          return <li key={ gif.id }> { gif.title } </li>;
-        }
-        )}
-      </ol>
+      <h2>{category}</h2>
+      <section className='card-grid'>
+        <p></p>
+        {gifs.map(( gif ) => {
+          return <GifGridItem {...gif} key={gif.id} />;
+        })}
+      </section>
     </>
   );
 };
