@@ -25,7 +25,7 @@ const CategoryAdd = ({ setCategories }) => {
       <form onSubmit={handleOnSubmit}>
         <input type='text' value={category} onChange={handleOnChangeInput} />
       </form>
-      <input type='submit' value='Limpiar Busqueda' onClick={handleOnDelete} />
+      <input type='submit' value='Limpiar Busqueda' onClick={handleOnDelete} id="clearBtn"/>
     </>
   );
 };

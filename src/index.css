@@ -37,3 +37,14 @@ input[type="text"]{
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+#clearBtn{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+}
