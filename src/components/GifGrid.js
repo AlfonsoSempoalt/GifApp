@@ -1,28 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import GifGridItem from './GifGridItem';
-import { getGifs } from '../helpers/getGifs';
 import { useFetchGifs } from '../hooks/useFetchGifs';
 
 const GifGrid = ({ category }) => {
-  const [gifs, setGifs] = useState([]);
 
-  const { loading } = useFetchGifs(); 
-
-    console.log(loading)
-
-  useEffect(() => {
-    getGifs( category )
-          .then(setGifs);
-  }, [category]);
+  const { data: gifs, loading } = useFetchGifs(category);
 
   return (
     <>
-      <h2>{category}</h2>
-      {loading?'Loading...':'Charged'}
+      <h2 className="animate__animated animate__fadeIn">{category}</h2>
+      { loading && <p className="animate__animated animate__flash ">loading...</p> }
       <section className='card-grid'>
         <p></p>
-        {gifs.map(( gif ) => {
+        {gifs.map((gif) => {
           return <GifGridItem {...gif} key={gif.id} />;
         })}
       </section>

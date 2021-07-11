@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const GifGridItem = ({ url, title, id }) => {
   return (
-    <section className="card">
+    <section className="card animate__animated animate__fadeIn ">
       <img src={url} alt={title}></img>
       <h4>{title}</h4>
     </section>
