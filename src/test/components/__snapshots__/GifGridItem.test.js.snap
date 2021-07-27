@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests to <GifGridItem /> with enzyme should match the wrapper with the snapshot 1`] = `
+<section
+  className="card animate__animated animate__fadeIn"
+>
+  <img
+    alt="test"
+    src="testing.com"
+  />
+  <h4>
+    test
+  </h4>
+</section>
+`;

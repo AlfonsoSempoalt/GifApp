@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests to <CategoryAdd /> should match with snapshot categoryAdd 1`] = `
+<Fragment>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </form>
+  <input
+    id="clearBtn"
+    onClick={[Function]}
+    type="submit"
+    value="Limpiar Busqueda"
+  />
+</Fragment>
+`;
