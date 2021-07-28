@@ -23,7 +23,7 @@ const CategoryAdd = ({ setCategories }) => {
   return (
     <>
       <form onSubmit={handleOnSubmit}>
-        <input type='text' value={category} onChange={handleOnChangeInput} />
+        <input type='text' value={category} onChange={handleOnChangeInput} id='inputText'/>
       </form>
       <input type='submit' value='Limpiar Busqueda' onClick={handleOnDelete} id="clearBtn"/>
     </>

@@ -6,6 +6,7 @@ exports[`tests to <CategoryAdd /> should match with snapshot categoryAdd 1`] = `
     onSubmit={[Function]}
   >
     <input
+      id="inputText"
       onChange={[Function]}
       type="text"
       value=""
