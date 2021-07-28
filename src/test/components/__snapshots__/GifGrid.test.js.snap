@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests to <GifGrid /> should show items when we use useFetchGifs 1`] = `
+<Fragment>
+  <h2
+    className="animate__animated animate__fadeIn"
+  >
+    One piece
+  </h2>
+  <section
+    className="card-grid"
+  >
+    <p />
+    <GifGridItem
+      id={0}
+      key="0"
+      title="hello world"
+      url="https://holamundo.com/holaMundo.png"
+    />
+  </section>
+</Fragment>
+`;
+
+exports[`tests to <GifGrid /> the gifgrid componente should match with the snapshot 1`] = `
+<Fragment>
+  <h2
+    className="animate__animated animate__fadeIn"
+  >
+    One piece
+  </h2>
+  <p
+    className="animate__animated animate__flash "
+  >
+    loading...
+  </p>
+  <section
+    className="card-grid"
+  >
+    <p />
+  </section>
+</Fragment>
+`;
