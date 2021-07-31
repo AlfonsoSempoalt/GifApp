@@ -10,7 +10,6 @@ exports[`tests to <GifGrid /> should show items when we use useFetchGifs 1`] = `
   <section
     className="card-grid"
   >
-    <p />
     <GifGridItem
       id={0}
       key="0"
@@ -35,8 +34,6 @@ exports[`tests to <GifGrid /> the gifgrid componente should match with the snaps
   </p>
   <section
     className="card-grid"
-  >
-    <p />
-  </section>
+  />
 </Fragment>
 `;

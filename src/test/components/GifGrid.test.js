@@ -9,18 +9,6 @@ jest.mock('../../hooks/useFetchGifs');
 
 describe('tests to <GifGrid />', () => {
   const category = 'One piece';
-  //checar como poner esto de nuevo sin necesidad de andar haciendo el wrapper
-  // y el useFetchfids en cada prueba
-  /* let wrapper = shallow(<GifGrid category={category} />);
-
-  beforeEach(() => {
-    useFetchGifs.mockReturnValue({
-      data: [],
-      loading: true,
-    });
-
-    wrapper = shallow(<GifGrid category={category} />);
-  }); */
 
   test('the gifgrid componente should match with the snapshot', () => {
     useFetchGifs.mockReturnValue({
@@ -33,7 +21,7 @@ describe('tests to <GifGrid />', () => {
   });
 
   test('should show items when we use useFetchGifs', () => {
-    const data = [
+    const gifs = [
       {
         id: 0,
         title: 'hello world',
@@ -42,12 +30,14 @@ describe('tests to <GifGrid />', () => {
     ];
 
     useFetchGifs.mockReturnValue({
-      data: data,
+      data: gifs,
       loading: false,
     });
 
     const wrapper = shallow(<GifGrid category={category} />);
 
     expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find('p').exists()).toBe(false);
+    expect(wrapper.find('GifGridItem').length).toBe( gifs.length );
   });
 });

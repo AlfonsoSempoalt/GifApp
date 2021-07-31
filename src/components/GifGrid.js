@@ -12,7 +12,6 @@ const GifGrid = ({ category }) => {
       <h2 className="animate__animated animate__fadeIn">{category}</h2>
       { loading && <p className="animate__animated animate__flash ">loading...</p> }
       <section className='card-grid'>
-        <p></p>
         {gifs.map((gif) => {
           return <GifGridItem {...gif} key={gif.id} />;
         })}
